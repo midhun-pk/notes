@@ -70,6 +70,18 @@
 
     .controls.right {
         flex: 0 0 auto;
-        background-color: blue;
+
+        .icon {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            outline: none;
+            font-size: 40px;
+        }
+
     }
 }
