@@ -43,7 +43,9 @@ export class NotesService {
   search(searchText: string) {
     searchText = searchText.trim().toLowerCase();
     if (searchText) {
-      let notes = this.notes.getValue();
+      let notes = JSON.parse(localStorage.getItem('notes'));
+      if (!notes) { notes = []; }
+      notes = notes as Note[];
       notes = notes.filter(note => {
         return note.title.toLowerCase().includes(searchText) || note.description.toLowerCase().includes(searchText);
       });

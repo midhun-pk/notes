@@ -1,0 +1,396 @@
+section {
+    max-width: 1000px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0px auto;
+    padding-top: 100px;
+}
+
+#content-container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: var(--color-1);
+    overflow: hidden;
+    z-index: 0;
+    margin: 0px auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#form-container {
+    left: 0px;
+    width: 500px;
+    position: absolute;
+    height: 100%;
+    transition: left 0.6s linear;
+}
+
+#options-container {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left bottom, var(--color-5), var(--color-4));
+}
+
+#options-container.signup {
+    animation: move-clip-path-left .6s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#options-container.signin {
+    animation: move-clip-path-right .6s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#options-container.signup + #form-container {
+    left: 300px;
+}
+
+#options-container.signin + #form-container {
+    left: 0px;
+}
+
+#button-container {
+    width: 300px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    padding: 70px;
+    padding-top: 37%;
+}
+
+#options-button {
+    width: 100%;
+    height: 50px;
+    border: 1.5px solid var(--color-3);
+    background-color: transparent;
+    color: var(--color-3);
+    border-radius: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#options-button a {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+}
+
+#options-button a:visited {
+    color: var(--color-3);
+}
+
+#options-button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255, 0.1);
+}
+
+#options-container.signup #button-container {
+    animation: move-container-left .6s linear;
+    animation-fill-mode: forwards;
+}
+
+#options-container.signin #button-container {
+    animation: move-container-right .6s linear;
+    animation-fill-mode: forwards;
+}
+
+.message {
+    top: 30%;
+    color: var(--color-3);
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.message div:nth-child(1) {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#signin-message {
+    position: absolute;
+    right: 0px;
+    transition: right .6s linear;
+}
+
+#options-container.signup #signin-message {
+    right: -50px;
+}
+
+#options-container.signin #signin-message {
+    right: 0px;
+}
+
+#signup-message {
+    position: absolute;
+    left: 0px;
+    transition: left .6s linear;
+}
+
+#options-container.signin #signup-message {
+    left: -50px;
+}
+
+#options-container.signup #signup-message {
+    left: 0px;
+}
+
+.square-1 {
+    position: absolute;
+    top: 30px;
+    left: 140px;
+	height: 20px;
+    width: 20px;
+    background-color: rgb(255, 255, 255, 0.15);
+    transform: rotate(45deg);
+    transition: left .6s linear;
+}
+
+.square-2 {
+    position: absolute;
+    top: 120px;
+    left: 380px;
+	height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.15);
+    transform: rotate(45deg);
+    transition: left .6s linear;
+}
+
+.triangle-left-1 {
+    position: absolute;
+    top: -30px;
+    right: 0px;
+	width: 0;
+	height: 0;
+	border-top: 80px solid transparent;
+	border-right: 160px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 80px solid transparent;
+    transform: rotate(-45deg);
+    transition: right .6s linear;
+}
+
+.triangle-left-2 {
+    position: absolute;
+    bottom: 220px;
+    left: 270px;
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 45px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 25px solid transparent;
+    transition: left .6s linear;
+}
+
+.triangle-right {
+    position: absolute;
+    bottom: 20px;
+    right: 140px;
+	width: 0;
+	height: 0;
+	border-top: 40px solid transparent;
+	border-left: 80px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 40px solid transparent;
+    transition: right .6s linear;
+    transform: rotate(45deg);
+}
+
+.circle-1 {
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    height: 200px;
+    width: 200px;
+    background-color: rgb(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transition: left .6s linear;
+}
+
+.circle-2 {
+    position: absolute;
+    bottom: 190px;
+    right: 320px;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transition: right .6s linear;
+}
+
+.rectangle-1 {
+    position: absolute;
+    bottom: 50px;
+    right: 350px;
+    height: 15px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.15);
+    transform: rotate(45deg);
+    transition: right .6s linear;
+}
+
+.rectangle-2 {
+    position: absolute;
+    bottom: 160px;
+    right: 20px;
+    height: 40px;
+    width: 15px;
+    background-color: rgb(255, 255, 255, 0.15);
+    transform: rotate(-20deg);
+    transition: right .6s linear;
+}
+
+#options-container.signin .rectangle-1 {
+    right: 330px;
+}
+
+#options-container.signup .rectangle-1 {
+    right: 350px;
+}
+
+#options-container.signin .rectangle-2 {
+    right: 0px;
+}
+
+#options-container.signup .rectangle-2 {
+    right: 20px;
+}
+
+#options-container.signin .circle-1 {
+    left: -50px;
+}
+
+#options-container.signup .circle-1 {
+    left: -80px;
+}
+
+#options-container.signin .circle-2 {
+    right: 280px;
+}
+
+#options-container.signup .circle-2 {
+    right: 320px;
+}
+
+#options-container.signin .square-1 {
+    left: 180px;
+}
+
+#options-container.signup .square-1 {
+    left: 140px;
+}
+
+#options-container.signin .square-2 {
+    left: 380px;
+}
+
+#options-container.signup .square-2 {
+    left: 360px;
+}
+
+#options-container.signin .triangle-left-1 {
+    right: -50px;
+}
+
+#options-container.signup .triangle-left-1 {
+    right: -30px;
+}
+
+#options-container.signin .triangle-left-2 {
+    left: 310px;
+}
+
+#options-container.signup .triangle-left-2 {
+    left: 270px;
+}
+
+#options-container.signin .triangle-right {
+    right: 100px;
+}
+
+#options-container.signup .triangle-right {
+    right: 140px;
+}
+
+
+@keyframes move-clip-path-right {
+    0% {
+        clip-path: polygon(0% 0%, 0% 100%, 300px 100%, 300px 0%);
+    }
+    20% {
+        clip-path: polygon(0% 0%, 0% 100%, 400px 100%, 400px 0%);
+    }
+    80% {
+        clip-path: polygon(360px 0%, 360px 100%, 760px 100%, 760px 0%);
+    }
+    100% {
+        clip-path: polygon(500px 0%, 500px 100%, 100% 100%, 100% 0%);
+    }
+}
+
+@keyframes move-clip-path-left {
+    0% {
+        clip-path: polygon(500px 0%, 500px 100%, 100% 100%, 100% 0%);
+    }
+    20% {
+        clip-path: polygon(400px 0%, 400px 100%, 100% 100%, 100% 0%);
+    }
+    80% {
+        clip-path: polygon(40px 0%, 40px 100%, 440px 100%, 440px 0%);
+    }
+    100% {
+        clip-path: polygon(0% 0%, 0% 100%, 300px 100%, 300px 0%);
+    }    
+}
+
+@keyframes move-container-right {
+    0% {
+        left: 0px;
+        width: 300px;
+    }
+    20% {
+        left: 0px;
+        width: 400px;
+    }
+    80% {
+        left: 360px;
+        width: 400px;
+    }
+    100% {
+        left: 500px;
+        width: 300px;
+    }
+}
+
+@keyframes move-container-left {
+    0% {
+        left: 500px;
+        width: 300px;
+    }
+    20% {
+        left: 400px;
+        width: 400px;
+    }
+    80% {
+        left: 40px;
+        width: 400px;
+    }
+    100% {
+        left: 0px;
+        width: 300px;
+    }
+}

@@ -8,13 +8,25 @@
             <input type="text" name="title" [(ngModel)]="title" placeholder="Title">
         </div>
         <div class="note">
-            <input type="text" name="note" [(ngModel)]="description" placeholder="Take a note...">
+            <textarea type="text" name="note" [(ngModel)]="description" placeholder="Take a note..."
+                (input)="autoTextAreaHeight(descriptionElement)" #descriptionElement></textarea>
+        </div>
+        <div class="images">
+            <div class="image" *ngFor="let imageSource of imageSources">
+                <img [src]="imageSource" alt="New upload">
+            </div>
         </div>
         <div class="other-options">
             <div class="icons">
                 <button mat-icon-button matTooltip="Add Note" (click)="onAddNoteClick()">
                     <mat-icon class="icon">
                         note_add
+                    </mat-icon>
+                </button>
+                <input class="file-input" multiple type="file" (change)="onFileChanged($event)" hidden #fileInput>
+                <button mat-icon-button matTooltip="Add Note" (click)="fileInput.click()">
+                    <mat-icon class="icon">
+                        add_photo_alternate
                     </mat-icon>
                 </button>
             </div>

@@ -1,8 +1,20 @@
 <div class="container">
-    <div class="title">{{ note.title }}</div>
-    <div class="note">{{ note.description }}</div>
+    <div class="title" *ngIf="!editing">{{ note.title }}</div>
+    <div class="title" *ngIf="editing">
+        <input type="text" name="title" [(ngModel)]="title" placeholder="Title">
+    </div>
+    <div class="note" *ngIf="!editing">{{ note.description }}</div>
+    <div class="note" *ngIf="editing">
+        <textarea type="text" name="note" [(ngModel)]="description" placeholder="Take a note..."
+            (input)="autoTextAreaHeight(descriptionElement)" #descriptionElement></textarea>
+    </div>
     <div class="options">
-        <div class="icons">
+        <div class="icons" *ngIf="!editing">
+            <button mat-icon-button (click)="onEditButtonClick()">
+                <mat-icon class="icon" matTooltip="Edit">
+                    edit
+                </mat-icon>
+            </button>
             <button mat-icon-button (click)="onDeleteButtonClick()">
                 <mat-icon class="icon" matTooltip="Delete">
                     delete
@@ -14,5 +26,6 @@
                 </mat-icon>
             </button>
         </div>
+        <button *ngIf="editing" type="button" mat-button (click)="onSaveButtonClick()">Close</button>
     </div>
 </div>

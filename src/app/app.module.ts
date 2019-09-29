@@ -17,6 +17,9 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { NoteComponent } from './components/notes/note/note.component';
 import { NoteAddComponent } from './components/notes/note-add/note-add.component';
+import { UsersModule } from './components/users/users.module';
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -37,8 +40,9 @@ import { NoteAddComponent } from './components/notes/note-add/note-add.component
     MatInputModule,
     MatTooltipModule,
     FormsModule,
+    UsersModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

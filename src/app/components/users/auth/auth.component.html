@@ -1,0 +1,32 @@
+<section>
+  <div id="content-container">
+    <div id="options-container" [ngClass]="signUpSelected ? 'signup': 'signin'">
+      <div id="signup-message" class="message">
+        <div>Welcome Back!</div>
+        <div>To keep conected with us please login with your personal info</div>
+      </div>
+      <div id="signin-message" class="message">
+        <div>Hello, Friend!</div>
+        <div>Enter your personal details and start journey with us</div>
+      </div>
+      <div id="button-container">
+        <div id="options-button">
+          <a *ngIf="!signUpSelected" routerLink="signup">SIGN UP</a>
+          <a *ngIf="signUpSelected" routerLink="signin">SIGN IN</a>
+        </div>
+      </div>
+      <div class="square-1"></div>
+      <div class="square-2"></div>
+      <div class="triangle-left-1"></div>
+      <div class="triangle-left-2"></div>
+      <div class="triangle-right"></div>
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="rectangle-1"></div>
+      <div class="rectangle-2"></div>
+    </div>
+    <div id="form-container" [@animRoutes]="getRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </div>
+</section>

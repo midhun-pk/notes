@@ -27,8 +27,8 @@
     </div>
     <div class="right controls">
         <mat-menu #appMenu="matMenu" xPosition="before">
-            <button mat-menu-item>Settings</button>
-            <button mat-menu-item>Help</button>
+            <button mat-menu-item>{{ user.username }}</button>
+            <button mat-menu-item (click)="onLogoutButtonClick()">Logout</button>
         </mat-menu>
 
         <button mat-icon-button [matMenuTriggerFor]="appMenu" class="color-blue">

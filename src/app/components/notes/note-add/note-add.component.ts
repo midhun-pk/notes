@@ -12,6 +12,7 @@ export class NoteAddComponent implements OnInit {
   addNoteIsFocused: boolean;
   title = '';
   description = '';
+  imageSources = [];
 
   constructor(private notesService: NotesService) { }
 
@@ -24,6 +25,7 @@ export class NoteAddComponent implements OnInit {
 
   onCloseClick() {
     this.addNoteIsFocused = false;
+    this.imageSources = [];
   }
 
   onAddNoteClick() {
@@ -35,5 +37,20 @@ export class NoteAddComponent implements OnInit {
       this.notesService.add(note);
       this.title = this.description = '';
     }
+  }
+
+  autoTextAreaHeight(element: HTMLElement) {
+    element.style.height = 'auto'; // Height should decrease when backspace is pressed
+    element.style.height = (element.scrollHeight > 30 ? element.scrollHeight : 30) + 'px';
+  }
+
+  onFileChanged(event) {
+    const files = event.target.files;
+    Object.keys(files).forEach(key => {
+      const file = files[key];
+      const reader = new FileReader();
+      reader.onload = e => this.imageSources.push(reader.result);
+      reader.readAsDataURL(file);
+    });
   }
 }
