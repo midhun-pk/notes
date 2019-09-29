@@ -1,15 +1,15 @@
 <div class="container">
-    <div class="title">Hi</div>
-    <div class="note"></div>
+    <div class="title">{{ note.title }}</div>
+    <div class="note">{{ note.description }}</div>
     <div class="options">
         <div class="icons">
-            <button mat-icon-button (click)="onAddNoteClick()">
+            <button mat-icon-button (click)="onDeleteButtonClick()">
                 <mat-icon class="icon" matTooltip="Delete">
                     delete
                 </mat-icon>
             </button>
             <button mat-icon-button (click)="onDoneButtonClick()" class="done">
-                <mat-icon class="icon" matTooltip="Done" [ngClass]="{'color-green': done}">
+                <mat-icon class="icon" matTooltip="Done" [ngClass]="{'color-green': note.completed}">
                     check_circle
                 </mat-icon>
             </button>

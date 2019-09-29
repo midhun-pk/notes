@@ -2,12 +2,5 @@
     <app-note-add></app-note-add>
 </div>
 <div class="notes-list">
-    <app-note class="note"></app-note>
-    <app-note class="note"></app-note>
-    <app-note class="note"></app-note>
-    <app-note class="note"></app-note>
-    <app-note class="note"></app-note>
-    <app-note class="note"></app-note>
-    <app-note class="note"></app-note>
-    <app-note class="note"></app-note>
+    <app-note class="note" *ngFor="let note of notes" [note]="note"></app-note>
 </div>
