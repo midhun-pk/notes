@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  title: string;
+  searchText: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.title = 'Notes';
   }
 
+  clearSearch() {
+    this.searchText = '';
+  }
 }

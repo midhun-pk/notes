@@ -11,6 +11,7 @@ import {
   MatMenuModule,
   MatInputModule,
 } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {
     MatButtonModule,
     MatMenuModule,
     MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

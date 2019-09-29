@@ -1,1 +1,22 @@
-<p>navbar works!</p>
+<div class="navbar">
+    <div class="left controls">
+        <div class="bread-crumbs"></div>
+        <div class="title"><span>{{ title }}</span></div>
+    </div>
+    <div class="middle controls">
+        <div class="search-bar">
+            <button mat-button>
+                <mat-icon class="search-bar__icon">
+                    search
+                </mat-icon>
+            </button>
+            <input class="search-bar__input" [(ngModel)]="searchText" placeholder="Search" />
+            <button mat-button (click)="clearSearch()">
+                <mat-icon class="search-bar__icon">
+                    close
+                </mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="right controls"></div>
+</div>
