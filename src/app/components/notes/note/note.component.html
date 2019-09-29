@@ -1,1 +1,18 @@
-<p>note works!</p>
+<div class="container">
+    <div class="title">Hi</div>
+    <div class="note"></div>
+    <div class="options">
+        <div class="icons">
+            <button mat-icon-button (click)="onAddNoteClick()">
+                <mat-icon class="icon" matTooltip="Delete">
+                    delete
+                </mat-icon>
+            </button>
+            <button mat-icon-button (click)="onDoneButtonClick()" class="done">
+                <mat-icon class="icon" matTooltip="Done" [ngClass]="{'color-green': done}">
+                    check_circle
+                </mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

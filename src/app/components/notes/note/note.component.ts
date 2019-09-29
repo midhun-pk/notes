@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteComponent implements OnInit {
 
+  done: boolean;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onDoneButtonClick() {
+    this.done = true;
   }
 
 }
