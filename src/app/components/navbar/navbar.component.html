@@ -10,19 +10,20 @@
         <div class="title"><span>{{ title }}</span></div>
     </div>
     <div class="middle controls">
-        <div class="search-bar">
+        <form class="search-bar" (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm">
             <button mat-button>
                 <mat-icon class="search-bar__icon">
                     search
                 </mat-icon>
             </button>
-            <input class="search-bar__input" [(ngModel)]="searchText" placeholder="Search" />
+            <input class="search-bar__input" name="searchText" placeholder="Search" ngModel />
             <button mat-button (click)="clearSearch()">
                 <mat-icon class="search-bar__icon">
                     close
                 </mat-icon>
             </button>
-        </div>
+            <input type="submit" hidden>
+        </form>
     </div>
     <div class="right controls">
         <mat-menu #appMenu="matMenu" xPosition="before">

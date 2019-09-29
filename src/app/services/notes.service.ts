@@ -39,4 +39,19 @@ export class NotesService {
     this.notes.next([...notes]);
     localStorage.setItem('notes', JSON.stringify(notes));
   }
+
+  search(searchText: string) {
+    searchText = searchText.trim().toLowerCase();
+    if (searchText) {
+      let notes = this.notes.getValue();
+      notes = notes.filter(note => {
+        return note.title.toLowerCase().includes(searchText) || note.description.toLowerCase().includes(searchText);
+      });
+      this.notes.next(notes);
+    } else {
+      let notes = JSON.parse(localStorage.getItem('notes'));
+      if (!notes) { notes = []; }
+      this.notes.next(notes as Note[]);
+    }
+  }
 }
