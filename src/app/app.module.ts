@@ -11,14 +11,21 @@ import {
   MatButtonModule,
   MatMenuModule,
   MatInputModule,
+  MatTooltipModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { NoteComponent } from './components/notes/note/note.component';
+import { NoteAddComponent } from './components/notes/note-add/note-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     NotesComponent,
+    HomeComponent,
+    NoteComponent,
+    NoteAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +35,7 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatMenuModule,
     MatInputModule,
+    MatTooltipModule,
     FormsModule,
   ],
   providers: [],
