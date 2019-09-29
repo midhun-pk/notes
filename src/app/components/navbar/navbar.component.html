@@ -1,6 +1,12 @@
 <div class="navbar">
     <div class="left controls">
-        <div class="bread-crumbs"></div>
+        <div class="logo">
+            <button mat-icon-button class="color-yellow">
+                <mat-icon class="icon">
+                    book
+                </mat-icon>
+            </button>
+        </div>
         <div class="title"><span>{{ title }}</span></div>
     </div>
     <div class="middle controls">
@@ -24,7 +30,7 @@
             <button mat-menu-item>Help</button>
         </mat-menu>
 
-        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <button mat-icon-button [matMenuTriggerFor]="appMenu" class="color-blue">
             <mat-icon class="icon">
                 account_circle
             </mat-icon>
